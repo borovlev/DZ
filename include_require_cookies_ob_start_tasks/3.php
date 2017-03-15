@@ -16,26 +16,26 @@ function redirect($to)
 }
 	if ($_POST) {
 		setcookie("ColorCookie", $_POST['color'], time()+20);
-		Print_r ($_POST);
-		print_r($_COOKIE);
-		
+		//Print_r ($_POST);
+		//print_r($_COOKIE);
+	
 		switch ($_COOKIE['ColorCookie']) {
-    case "red":
+    case 'red':
         $a = "selected";
         break;
-    case "blue":
+    case 'blue':
          $b = "selected";
         break;
     case "yellow":
-         $c = "selected";
+         $c = 'selected';
         break;
 	default:
-        $d = "selected";
+        $d = "selected";		
 }
-
-		redirect("./3.php");
+		
+		//redirect("./3.php");
 	}
-	// <? if($_COOKIE['ColorCookie'] == $_POST['color']): echo "selected";
+	// <? if($_COOKIE['ColorCookie'] == $_POST['color']): echo "selected=\"selected\"";
 ?>
 
 <!DOCTYPE HTML>
@@ -54,10 +54,10 @@ function redirect($to)
 	<h2>Form</h2>
 	<form method="post">
 <select name="color">
-  <option value="red"<?=$a ?>>Красный</option>
-  <option value="blue"<?=$b ?>>Синий</option>
-  <option value="yellow"<?=$c ?>>Желтый</option>
-  <option value="green" <?=$d ?>>Зеленый</option>
+  <option <?=$a ?> value="red" >Красный</option>
+  <option <?=$b ?> value="blue">Синий</option>
+  <option <?=$c ?> value="yellow">Желтый</option>
+  <option <?=$d ?> value="green">Зеленый</option>
 </select>
 	<button>GO</button>
 	</form>
